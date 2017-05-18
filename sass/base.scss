@@ -1,0 +1,170 @@
+$main-orange: #ff9b51;
+$dark-grey: #333333;
+$main-grey: #86878b;
+$main-white: #f3f1ef;
+$main-font:'Open Sans', sans-serif;
+
+// SOCAIL COLORS
+$facebook-c: #3C5899;
+$twitter-c: #41ABE1;
+$google-c: #DB4437;
+$pinterest-c: #BD2126;
+$stumbleupon-c: #EB4924;
+$instagram-c: #125688;
+
+
+// BASE STYLES
+body{
+	font: 14px/20px  $main-font;
+	color: $main-grey;   
+}
+
+h2 {
+	font-size: 2.5em;
+	text-transform: uppercase;
+	font-family: 'Raleway', sans-serif;
+	color: $main-white;
+}
+
+h3 {
+	margin-top: 0;
+}
+
+// TABS
+.tab-content {
+	display: inline-block;
+	vertical-align: top;
+	
+	&__item {
+		border-radius: 3px;
+		padding: 0.5em 1em;
+		vertical-align: top;
+
+		h2 {
+			color: black;
+			margin-top: 0;
+		}
+	}
+}
+
+.tabs {
+	display: inline-block;
+	vertical-align: top;
+	color: #fff;
+	
+	&__item {
+		cursor: pointer;
+		padding: 3.2em 0;
+		display: block;
+		text-align: center;
+		position: relative;
+		background: $dark-grey;
+		font-weight: bold;
+		margin-bottom: 2px;
+		width: 112px;
+		min-height: 112px;
+		
+		&:first-child {
+			border-radius: 3px 3px 0 0;
+		}
+	
+		&:last-child {
+			border-radius: 0 0 3px 3px;
+		}
+	}
+	
+	.active {
+		background: $main-orange;
+	}
+}
+
+// BUTTONS
+@mixin button-transparent {
+	background-color: transparent;
+	border-radius: 3px;
+	padding: 5px 10px;;
+	border: 2px solid #fff;
+	color: #fff;
+	outline: none;
+	transition: all 0.15s;
+	&:hover {
+		background-color: #fff;
+		color: $dark-grey;
+	}
+	&:active {
+		background-color: rgba(0, 0, 0, 0.4);
+		overflow: hidden;
+	}
+}
+
+@mixin button-color($color) {
+	border: none;
+	border-radius: 3px;
+	background-color: $color;
+	padding: 7px 12px;
+	color: #fff;
+	outline: none;
+	box-shadow: 1px 1px 5px $dark-grey;
+	&:hover {
+		background-color: lighten($color, 6);
+	}
+	&:active {
+		background-color: darken($color, 10);
+	}
+}
+
+
+// CUSTOM HUMBURGER TOGGLE
+.navbar-toggle {
+  border: none;
+  background: transparent !important;
+
+  &:hover {
+    background: transparent !important;
+  }
+
+  .icon-bar {
+    width: 22px;
+    transition: all 0.2s;
+  }
+  .top-bar {
+    transform: rotate(45deg);
+    transform-origin: 10% 10%;
+  }
+  .middle-bar {
+    opacity: 0;
+  }
+  .bottom-bar {
+    transform: rotate(-45deg);
+    transform-origin: 10% 90%;
+  }
+}
+
+.navbar-toggle.collapsed {
+  .top-bar {
+    transform: rotate(0);
+  }
+  .middle-bar {
+    opacity: 1;
+  }
+  .bottom-bar {
+    transform: rotate(0);
+  }
+}
+
+
+
+// SOCIAL ICONS
+@mixin social-icon ($hover-color) {
+	color: $main-grey;
+	text-align: center;
+	transition: all 0.3s;
+	&:hover {
+		color: $hover-color;
+	}
+	&:active {
+		color: darken($hover-color, 10);
+	}
+
+}
+
